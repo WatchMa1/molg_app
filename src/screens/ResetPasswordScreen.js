@@ -11,9 +11,9 @@ const ResetPasswordWithOTP = () => {
       />
       <Text style={styles.message}>
         To reset your password, contact support on:
-        {'\n'}+260 975 434795
-        {'\n'}+260 964 978222
-        {'\n'}Email: nyumbayanga33@gmail.com
+        {'\n'}+260 9##
+        {'\n'}+260 9##
+        {'\n'}Email: sk@gmail.com
       </Text>
     </View>
   );

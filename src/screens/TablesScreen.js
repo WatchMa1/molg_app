@@ -3,16 +3,13 @@ import { View, FlatList, StyleSheet, Alert } from 'react-native';
 import SearchBar from '../components/SearchBar';
 
 
-const BuyScreen = ({ navigation }) => {
+const TablesScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(true);
 
   return (
     <View style={styles.container}>
-      <SearchBar
-        screen="Buy"
-      />
-      <FlatList
-      />
+      <SearchBar screen="Tables" />
+      <FlatList />
     </View>
   );
 };
@@ -30,4 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BuyScreen;
+export default TablesScreen;

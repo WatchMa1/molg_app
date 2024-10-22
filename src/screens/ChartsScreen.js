@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet, Alert } from 'react-native';
-import { FIRESTORE_DB, FIREBASE_AUTH } from '../FirebaseConfig';
-import { collection, getDocs, query, where } from 'firebase/firestore';
-import PropertyCard from '../components/PropertyCard';
 import LoadingAnimation from '../components/LoadingAnimation';
-import { formatDate } from '../utils/utils';
 import SearchBar from '../components/SearchBar';
 
 
-const RentScreen = ({ navigation, setIsLoginRequired }) => {
+const ChartsScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(true);
   if (loading) {
     return (
@@ -20,7 +16,6 @@ const RentScreen = ({ navigation, setIsLoginRequired }) => {
 
   return (
     <View style={styles.container}>
-
 
     </View>
   );
@@ -38,4 +33,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RentScreen;
+export default ChartsScreen;
