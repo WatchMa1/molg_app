@@ -4,12 +4,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import HomeScreen from './src/screens/HomeScreen';
-import DetailsScreen from './src/screens/DetailsScreen';
-import RentScreen from './src/screens/ChartsScreen';
-import BuyScreen from './src/screens/TablesScreen';
+import ChartsScreen from './src/screens/ChartsScreen';
+import TablesScreen from './src/screens/TablesScreen';
 import CustomHeader from './src/components/CustomHeader';
 import ProfileScreen from './src/screens/ProfileScreen';
-import UploadScreen from './src/screens/UploadScreen';
 import StartupScreen from './src/screens/StartupScreen';
 import AboutScreen from './src/screens/AboutScreen';
 
@@ -31,12 +29,11 @@ function HomeStack() {
       })}
     >
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Details" component={DetailsScreen} />
     </Stack.Navigator>
   );
 }
 
-function RentStack() {
+function ChartsStack() {
   const [showSearch, setShowSearch] = React.useState(false);
 
   return (
@@ -51,12 +48,12 @@ function RentStack() {
         ),
       })}
     >
-      <Stack.Screen name="Rent" component={RentScreen} />
+      <Stack.Screen name="Charts" component={ChartsScreen} />
     </Stack.Navigator>
   );
 }
 
-function BuyStack() {
+function TablesStack() {
   const [showSearch, setShowSearch] = React.useState(false);
 
   return (
@@ -71,36 +68,11 @@ function BuyStack() {
         ),
       })}
     >
-      <Stack.Screen name="Buy" component={BuyScreen} />
+      <Stack.Screen name="Tables" component={TablesScreen} />
     </Stack.Navigator>
   );
 }
 
-function MarketStack() {
-  const [showSearch, setShowSearch] = React.useState(false);
-
-  return (
-    <Stack.Navigator
-      screenOptions={({ route }) => ({
-        header: ({ navigation }) => (
-          <CustomHeader
-            title={route.name}
-            showSearch={showSearch}
-            setShowSearch={setShowSearch}
-          />
-        ),
-      })}
-    >
-      <Stack.Screen name="Market" component={MarketScreen} />
-      <Stack.Screen name="Cart" component={CartScreen} />
-      <Stack.Screen
-        name="ProductDetails"
-        component={ProductDetailsScreen}
-        options={{ headerShown: true, title: 'Product Details' }}
-      />
-    </Stack.Navigator>
-  );
-}
 
 function MainTabNavigator() {
   return (
@@ -115,14 +87,10 @@ function MainTabNavigator() {
           let iconName;
           if (route.name === 'Home') {
             iconName = focused ? 'home' : 'home-outline';
-          } else if (route.name === 'Rent') {
-            iconName = focused ? 'key' : 'key-outline';
-          } else if (route.name === 'Buy') {
-            iconName = focused ? 'cart' : 'cart-outline';
-          } else if (route.name === 'Chat') {
-            iconName = focused ? 'chatbubble' : 'chatbubble-outline';
-          } else if (route.name === 'Market') {
-            iconName = focused ? 'storefront' : 'storefront-outline';
+          } else if (route.name === 'Charts') {
+            iconName = focused ? 'stats-chart' : 'stats-chart-outline';
+          } else if (route.name === 'Tables') {
+            iconName = focused ? 'grid' : 'grid-outline';
           }
 
           return <Ionicons name={iconName} size={size} color={color} />;
@@ -135,20 +103,16 @@ function MainTabNavigator() {
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name="Rent"
-        component={RentStack}
+        name="Charts"
+        component={ChartsStack}
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name="Buy"
-        component={BuyStack}
+        name="Tables"
+        component={TablesStack}
         options={{ headerShown: false }}
       />
-      <Tab.Screen
-        name="Market"
-        children={(props) => <MarketStack {...props} />}
-        options={{ headerShown: false }}
-      />
+
       {/* <Tab.Screen name="Chat" component={ChatScreen} /> */}
     </Tab.Navigator>
   );
@@ -174,10 +138,9 @@ function MainStackNavigator() {
         options={{ headerShown: false }}
       />
       <Stack.Screen name="Profile" component={ProfileScreen} />
-      <Stack.Screen name="Upload" component={UploadScreen} />
       <Stack.Screen name="About" component={AboutScreen} />
-
-      <Stack.Screen name="Details" component={DetailsScreen} />
+      <Stack.Screen name="Tables" component={TablesScreen} />
+      <Stack.Screen name="Charts" component={ChartsScreen} />
 
     </Stack.Navigator>
   );

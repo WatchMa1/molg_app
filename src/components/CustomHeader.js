@@ -79,15 +79,6 @@ const CustomHeader = ({ title }) => {
               <Text style={styles.menuItemText}>Profile</Text>
             </TouchableOpacity>
 
-
-            <TouchableOpacity onPress={() => {
-              setIsMenuVisible(false);
-              navigation.navigate('Upload');
-            }} style={styles.menuItem}>
-              <Ionicons name="cloud-upload" size={24} color="#FFA500" />
-              <Text style={styles.menuItemText}>Upload Property</Text>
-            </TouchableOpacity>
-
             <TouchableOpacity
               onPress={() => {
                 Alert.alert(
@@ -126,7 +117,7 @@ const CustomHeader = ({ title }) => {
               style={styles.menuItem}
             >
               <Ionicons name="cloud-upload" size={24} color="#FFA500" />
-              <Text style={styles.menuItemText}>Upload Property</Text>
+              <Text style={styles.menuItemText}> Enter New Data</Text>
             </TouchableOpacity>
 
             <TouchableOpacity

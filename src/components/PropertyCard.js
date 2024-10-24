@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Switch } from 'react-native';
 import { Card, Icon, Image } from 'react-native-elements';
-import { getCurrentUserRole, formatRelativeDate } from '../utils/utils'; // Import the utility function
-import { FIRESTORE_DB } from '../FirebaseConfig'; // Import Firestore DB
-import { doc, updateDoc } from 'firebase/firestore';
 
 const PropertyCard = ({ property, onPress, formatDate }) => {
   const [userRole, setUserRole] = useState('admin');
